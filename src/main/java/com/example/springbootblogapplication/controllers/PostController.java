@@ -53,8 +53,6 @@ public class PostController {
 
     @PostMapping("/posts/new")
     public String saveNewPost(@ModelAttribute Post post) {
-//        Post newPost = postService.savePost(post);
-//        return "redirect:/posts/" + newPost.getId();
         postService.savePost(post);
         return "redirect:/posts/" + post.getId();
     }
