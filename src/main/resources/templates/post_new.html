@@ -10,7 +10,7 @@
     <div class="container">
         <a th:href="@{/}">Home</a>
         <form action="#"
-              th:action="@{'/posts/new'}"
+              th:action="@{/posts/new}"
               th:object="${post}"
               method="post">
             <input type="hidden" th:field="*{account}" />

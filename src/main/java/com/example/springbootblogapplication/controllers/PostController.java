@@ -39,7 +39,7 @@ public class PostController {
 
     @GetMapping("/posts/new")
     public String createNewPost(Model model) {
-        Optional<Account> optionalAccount = accountService.findOneByEmail("user.user@domain.com");
+        Optional<Account> optionalAccount = accountService.findByEmail("user.user@domain.com");
         if(optionalAccount.isPresent()) {
             Post post = new Post();
             post.setAccount(optionalAccount.get());
@@ -49,25 +49,13 @@ public class PostController {
         else {
             return "404";
         }
-
-//        Account account1 = new Account();
-//        account1.setFirstName("user");
-//        account1.setLastName("user");
-//        account1.setEmail("user.user@domain.com");
-//        account1.setPassword("password");
-//        System.out.println("account1: " + account1);
-//        Post post = new Post();
-//        post.setAccount(account1);
-//        model.addAttribute("post", post);
-//
-//        Account account = accountService.findById(1L).orElseThrow(() -> new IllegalArgumentException("can not find by id"));
-//        System.out.println("account: " + account);
-//        return "post_new";
     }
 
     @PostMapping("/posts/new")
     public String saveNewPost(@ModelAttribute Post post) {
-        Post newPost = postService.savePost(post);
-        return "redirect:/posts/" + newPost.getId();
+//        Post newPost = postService.savePost(post);
+//        return "redirect:/posts/" + newPost.getId();
+        postService.savePost(post);
+        return "redirect:/posts/" + post.getId();
     }
 }

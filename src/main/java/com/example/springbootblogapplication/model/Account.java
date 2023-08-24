@@ -6,10 +6,11 @@ import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Entity(name = "Account")
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
 public class Account {
 
     @Id
