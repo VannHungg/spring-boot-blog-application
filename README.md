@@ -3,7 +3,7 @@ Sure, I can generate a more complete readme file for your project. Here is a pos
 
 # Spring Boot Blog Application
 
-This is a simple blog application built with Spring Boot, Thymeleaf, Bootstrap, MySQL and JPA. It allows users to create, edit, delete and view blog posts with different categories and tags. It also supports user authentication and authorization with Spring Security and JWT.
+This is a simple blog application built with Spring Boot, Thymeleaf, Bootstrap, MySQL and JPA. It allows users to create, edit, delete and view blog posts with different categories and tags. It also supports user authentication and authorization with Spring Security.
 
 ## Features
 
@@ -12,10 +12,8 @@ This is a simple blog application built with Spring Boot, Thymeleaf, Bootstrap, 
 - Search blog posts by title, category or tag
 - User registration and login
 - User roles and permissions
-- JSON Web Token (JWT) authentication
 - RESTful API for blog posts
 - Exception handling and validation
-- Unit testing with JUnit and Mockito
 
 ## Installation
 
@@ -45,7 +43,7 @@ The application will be accessible at http://localhost:8080.
 
 To use the application, you need to register an account first. You can choose either `ROLE_USER` or `ROLE_ADMIN` as your role. The default role is `ROLE_USER`.
 
-After registering, you can log in with your username and password. You will receive a JWT token that will be stored in your browser's local storage.
+After registering, you can log in with your username and password.
 
 As a user, you can create, edit, delete and view your own blog posts. You can also view other users' blog posts, but you cannot edit or delete them. You can also search blog posts by title, category or tag.
 
@@ -60,7 +58,6 @@ You can also send a POST request to http://localhost:8080/api/posts with the `Au
 - title (required)
 - content (required)
 - category (optional)
-- tags (optional)
 
 You can also send a PUT request to http://localhost:8080/api/posts/{id} with the `Authorization` header set to `Bearer <your JWT token>` and a JSON body with the same fields as above to update an existing blog post by its id.
 
